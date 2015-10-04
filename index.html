@@ -1,0 +1,34 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>JavaScript Code Editor</title>
+  <meta name="description" content="A text editor made with Javascript with code element">
+  <meta name="author" content="Who-Know-Who">
+  <link rel="stylesheet" href="styles.css">
+  <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+  <script src="script.js"></script>
+</head>
+<br />
+<body>
+    <table>
+        <tr>
+            <td width="50%">
+                <div id="div1" style="position:relative;border:1px solid black;">Div 1
+                    <br>
+                    <iframe name="div1_msg" id="div1_msg" style="border:3px solid green"></iframe>
+                </div>
+            </td>
+            <td width="50%">
+                <div id="div2" style="position:relative;border:1px solid black;">Div 2
+                    <br>
+                    <iframe name="div2_msg" id="div2_msg" style="border:3px solid red"></iframe>
+                </div>
+            </td>
+    </table>
+    <input type="button" value="Div 1 Editable" onclick="makeEditable('div1');">
+    <input type="button" value="Div 2 Editable" onclick="makeEditable('div2');">
+</body>
+</html>
