@@ -1,5 +1,4 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -13,22 +12,15 @@
 </head>
 <br />
 <body>
-    <table>
-        <tr>
-            <td width="50%">
-                <div id="div1" style="position:relative;border:1px solid black;">Div 1
-                    <br>
-                    <iframe name="div1_msg" id="div1_msg" style="border:3px solid green"></iframe>
-                </div>
-            </td>
-            <td width="50%">
-                <div id="div2" style="position:relative;border:1px solid black;">Div 2
-                    <br>
-                    <iframe name="div2_msg" id="div2_msg" style="border:3px solid red"></iframe>
-                </div>
-            </td>
-    </table>
+      <div id="div1" style="position:relative;border:1px solid black;">
+          <br>
+          <iframe name="div1_msg" id="div1_msg" width="80%" onload="onLoadHandler();" src="editable.htm"></iframe>
+      </div>
     <input type="button" value="Div 1 Editable" onclick="makeEditable('div1');">
-    <input type="button" value="Div 2 Editable" onclick="makeEditable('div2');">
 </body>
+<script type="text/javascript">
+function onLoadHandler() {
+    makeEditable('div1');
+}
+</script>
 </html>
