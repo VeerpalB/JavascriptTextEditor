@@ -11,16 +11,20 @@
   <script src="script.js"></script>
 </head>
 <br />
-<body>
-      <div id="div1" style="position:relative;border:1px solid black;">
+<body onLoad="iFrameOn();">
+<button  type="button" class="button" onclick="iBold();">B</button>
+<button type="button" class="button" onclick="iUnderline()">U</button>
+<button type="button" class="button" onclick="iItalic()">I</button>
+<button type="button" class="button" onclick="code()">C</button>
+      <div id="div1" style="position:relative;border:0px">
           <br>
-          <iframe name="div1_msg" id="div1_msg" width="80%" onload="onLoadHandler();" src="editable.htm"></iframe>
+          <iframe name="editor" id="editor" width="80%"></iframe>
       </div>
-    <input type="button" value="Div 1 Editable" onclick="makeEditable('div1');">
+    <!-- <input type="button" value="Div 1 Editable" onclick="makeEditable('div1');">
 </body>
 <script type="text/javascript">
 function onLoadHandler() {
     makeEditable('div1');
 }
-</script>
+</script>-->
 </html>
