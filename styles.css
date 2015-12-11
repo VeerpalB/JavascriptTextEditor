@@ -1,7 +1,33 @@
+.left{
+float:right;
+width:50%;
+height:100vh;
+}
+.right{
+overflow:hidden;
+height:100vh;
+}
+
+body{
+text-align:center;
+padding:0px;
+}
+
+textarea{
+width:100%;
+height:100%;
+border:solid #B6B9BA;
+padding:0px;
+font-family: monospace;
+font-size:13px;
+}
+textarea:focus {
+  outline: none;
+}
 .button {
-  font-weight:bold;
+font-weight:bold;
 }
 
 .frame{
-  width:100%auto;
+width:100%auto;
 }
