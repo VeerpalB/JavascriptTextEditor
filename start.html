@@ -3,25 +3,24 @@
 <head>
   <meta charset="utf-8">
   <title>JavaScript Code Editor</title>
-  <style>
-  .left{
-    float:right;
-    width:50%;
-    height:80%;
-    }
-  .right{
-    overflow:hidden;
-    height:80%;
-    }
-  </style>
-
+  <script src="start_script.js"></script>
+  <script type='text/javascript' src="C:\Users\Veerpal\Documents\GitHub\Behave.js-master\Behave.js-master\behave.js"></script>
+  <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
       <div id="div1" class="left">
-          <iframe name="editor" id="editor" src="index.html"  scrolling ="no" width="100%" style="height: 100vh;border:none;"></iframe>
+        <button  type="button" class="button" onclick="iBold();">B</button>
+        <button type="button" class="button" onclick="iUnderline()">U</button>
+        <button type="button" class="button" onclick="iItalic()">I</button>
+        <button type="button" class="button" onclick="Save()">S</button>
+        <div id="div1" class="frame">
+            <iframe name="editor" id="editor"  width="100%" style="height: 100vh;"></iframe>
+        </div>
       </div>
       <div id="div2" class="right">
-        <iframe name="code" id="code" src="main.html" scrolling ="no" width="100%" style="height: 100vh;border:none;"></iframe>
+        <button type="button" class="button" onclick="Save()">S</button>
+      	<textarea id="code"  width="100%" style="height: 100vh;"></textarea>
       </div>
 </body>
 </html>
