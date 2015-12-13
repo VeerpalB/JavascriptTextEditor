@@ -5,17 +5,16 @@ function Info(number, title, editor, code) {
     this.editor = editor;
     this.code = code;
 };
-var obj = new Info("0","joe", "hi", "hi");
+var obj = new Info(0,"joe", "hi", "hi");
 all_text = {0:obj};
 current=0;
 window.addEventListener("load", function () {
   BehaveHooks.add(['init:after'], function (data) {
     for(var i=0; i<localStorage.length;i++){
-      alert("hello");
       var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
       all_text[obj.number]=obj;
-      $(".column").append("<div id="+obj.number.toString()+">"+obj.title+"</div>");
-      var current=obj.number
+      $(".column").append("<div class='list' id="+obj.number.toString()+" onclick='Switch(this)'>"+obj.title+"</div>");
+      current=obj.number
     }
     document.getElementById('code').value = all_text[current].code;
   });
@@ -46,6 +45,30 @@ window.addEventListener("load", function () {
 // };
 // });
 // iFrameOn();
+
+function New(){
+  Save();
+  var obj = new Info(Object.keys(all_text).length,"Untitled", "enter text", "enter");
+  all_text[obj.number]=obj;
+  editor.document.open('text/html');
+  editor.document.write(all_text[obj.number].editor);
+  editor.document.close();
+  document.getElementById('code').value = all_text[obj.number].code;
+  $(".column").append("<div id="+obj.number.toString()+">"+obj.title+"</div>");
+  current = obj.number
+}
+
+function Switch(element){
+  Save()
+  var id = element.id;
+  var num = parseInt(id);
+  current=num;
+  document.getElementById('code').value = all_text[current].code;
+  editor.document.open('text/html');
+  editor.document.write(all_text[current].editor);
+  editor.document.close();
+
+}
 
 function Save(){
     var text = document.getElementById('code').value;
