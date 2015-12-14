@@ -5,17 +5,21 @@ function Info(number, title, editor, code) {
     this.editor = editor;
     this.code = code;
 };
-var obj = new Info(0,"joe", "hi", "hi");
-all_text = {0:obj};
-current=0;
 window.addEventListener("load", function () {
   BehaveHooks.add(['init:after'], function (data) {
+    var obj = new Info(0,"Untitled", "enter", "enter");
+    all_text = {0:obj};
+    current=0;
+    if(localStorage.getItem(0)!==null){
     for(var i=0; i<localStorage.length;i++){
       var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
       all_text[obj.number]=obj;
       $(".column").append("<div class='list' id="+obj.number.toString()+" onclick='Switch(this)'>"+obj.title+"</div>");
       current=obj.number
     }
+  }else{
+    $(".column").append("<div class='list' id="+obj.number.toString()+" onclick='Switch(this)'>"+obj.title+"</div>");
+  }
     document.getElementById('code').value = all_text[current].code;
   });
 
@@ -32,7 +36,7 @@ window.addEventListener("load", function () {
     fence: false
 });
      iFrameOn();
-    // localStorage.clear();
+  // localStorage.clear();
 });
 
 
@@ -54,7 +58,7 @@ function New(){
   editor.document.write(all_text[obj.number].editor);
   editor.document.close();
   document.getElementById('code').value = all_text[obj.number].code;
-  $(".column").append("<div id="+obj.number.toString()+">"+obj.title+"</div>");
+  $(".column").append("<div  class='list' id="+obj.number.toString()+" onclick='Switch(this)'>"+obj.title+"</div>");
   current = obj.number
 }
 
@@ -62,7 +66,7 @@ function Switch(element){
   Save()
   var id = element.id;
   var num = parseInt(id);
-  current=num;
+  current=all_text[num].number;
   document.getElementById('code').value = all_text[current].code;
   editor.document.open('text/html');
   editor.document.write(all_text[current].editor);
@@ -77,9 +81,10 @@ function Save(){
     var iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
     var val = iframeDoc.body.innerHTML;
     all_text[current].title = val.substring(0,4);
+    document.getElementById(all_text[current].number).innerHTML=all_text[current].title;
     all_text[current].editor=val;
-    window.localStorage.setItem(all_text[current].number,JSON.stringify(all_text[current]));
 
+    window.localStorage.setItem(all_text[current].number,JSON.stringify(all_text[current]));
 }
 
 // function Save(){

@@ -1,6 +1,11 @@
 .left{
-float:right;
+float:left;
 width:50%;
+height:100vh;
+}
+.column.left{
+float:left;
+width:15%;
 height:100vh;
 }
 .right{
@@ -30,4 +35,13 @@ font-weight:bold;
 
 .frame{
 width:100%auto;
+}
+
+.list:hover {
+    text-decoration: underline;
+}
+
+.list{
+  border: solid #B6B9BA;
+  padding:10px;
 }
