@@ -1,16 +1,22 @@
 .left{
 float:right;
 width:50%;
-height:100vh;
 }
 .column.left{
 float:left;
 width:15%;
-height:100vh;
 }
+.column.right{
+overflow:hidden;
+}
+
 .right{
 overflow:hidden;
-height:100vh;
+}
+
+.title{
+  float:right;
+  width:80%;
 }
 
 body{
@@ -38,7 +44,7 @@ width:100%auto;
 }
 
 .list:hover {
-    text-decoration: underline;
+    background-color: #DADFE0;
 }
 
 .list{
