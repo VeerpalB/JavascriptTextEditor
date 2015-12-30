@@ -13,16 +13,16 @@ window.addEventListener("load", function() {
         };
         current = 0;
         var local_exists = false;
-      
+
         for (var i = 0; i < localStorage.length; i++) {
             local_exists = true;
             var obj = JSON.parse(localStorage.getItem(localStorage.key(i)));
             all_text[obj.number] = obj;
-            $(".column").append("<div  class='list " + obj.number.toString() + "' id=" + obj.number.toString() + " onclick='Switch(this)'>" + obj.title + "</div><button type'button' class='list " + obj.number.toString() + "' id=" + obj.number.toString() + " onclick='Delete(this)'>X</button>");
+            $(".column").append("<div class='list " + obj.number.toString() + "'><div class='title' id=" + obj.number.toString() + " onclick='Switch(this)'>" + obj.title + "</div><button type'button' id=" + obj.number.toString() + " onclick='Delete(this)'>X</button></div>");
         }
 
         if (local_exists===false) {
-            $(".column").append("<div  class='list " + base_obj.number.toString() + "' id=" + base_obj.number.toString() + " onclick='Switch(this)'>" + base_obj.title + "</div><button type'button' class='list " + base_obj.number.toString() + "' id=" + base_obj.number.toString() + " onclick='Delete(this)'>X</button>");
+            $(".column").append("<div class='list " + base_obj.number.toString() + "'><div  class='title' id=" + base_obj.number.toString() + " onclick='Switch(this)'>" + base_obj.title + "</div><button type'button' id=" + base_obj.number.toString() + " onclick='Delete(this)'>X</button></div>");
         }
         document.getElementById('code').value = all_text[current].code;
         document.getElementById('title').value = all_text[current].title;
@@ -60,8 +60,8 @@ function New() {
     editor.document.write(all_text[obj.number].editor);
     editor.document.close();
     document.getElementById('code').value = all_text[obj.number].code;
-    document.getElementById('title').value = all_text[current].title;
-    $(".column").append("<div  class='list " + obj.number.toString() + "' id=" + obj.number.toString() + " onclick='Switch(this)'>" + obj.title + "</div><button type'button' class='list " + obj.number.toString() + "' id=" + obj.number.toString() + " onclick='Delete(this)'>X</button>");
+    document.getElementById('title').value = all_text[obj.number].title;
+    $(".column").append("<div class='list " + obj.number.toString() + "'><div class='title' id=" + obj.number.toString() + " onclick='Switch(this)'>" + obj.title + "</div><button type'button' id=" + obj.number.toString() + " onclick='Delete(this)'>X</button></div>");
     current = obj.number
 }
 
@@ -104,7 +104,7 @@ function Delete(element) {
       base_obj = new Info(0, "Untitled", "enter", "enter");
       current = base_obj.number;
       all_text[current]=base_obj;
-      $(".column").append("<div  class='list " + base_obj.number.toString() + "' id=" + base_obj.number.toString() + " onclick='Switch(this)'>" + base_obj.title + "</div><button type'button' class='list " + base_obj.number.toString() + "' id=" + base_obj.number.toString() + " onclick='Delete(this)'>X</button>");
+      $(".column").append("<div class='list " + base_obj.number.toString() + "'><div  class='title' id=" + base_obj.number.toString() + " onclick='Switch(this)'>" + base_obj.title + "</div><button type'button' id=" + base_obj.number.toString() + " onclick='Delete(this)'>X</button></div>");
       document.getElementById('code').value = all_text[current].code;
       document.getElementById('title').value = all_text[current].title;
       editor.document.open('text/html');
