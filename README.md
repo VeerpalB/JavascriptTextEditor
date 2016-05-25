@@ -1,4 +1,4 @@
-# JavascriptTextEditor
+# CodeNotes
 
 This is a editor built in javascript. Its purpose is for computer science students to be able to type code easily while also being able to take notes. Because of this, the editor is divided into parts: a text area and iframe. 
 
