@@ -1,13 +1,99 @@
-* {
-  box-sizing: border-box; }
-
+* { box-sizing: border-box } 
 body {
-  padding: 0;
-  margin: 0;
-  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #606c71; }
+    margin: 60px auto;
+    width: 70%;
+    background-color:lightgrey;
+    background-image:url('/blue-heart.jpg');
+}
+nav {
+    background:aliceblue;
+    text-align:center;
+    border-radius:10px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+nav ul, footer ul {
+    font-family:'Open Sans','Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
+}
+nav ul li, footer ul li {
+    display: inline;
+    margin-right: 20px;
+}
+a {
+    text-decoration: none;
+    color: #999;
+}
+a:hover {
+    text-decoration: underline;
+}
+h1 {
+    font-size: 3em;
+    font-family:'Open Sans','Helvetica', 'Arial', 'Sans-Serif';
+}
+p {
+    font-family:'Open Sans','Helvetica', 'Arial', 'Sans-Serif';
+    line-height: 1.4em;
+    color: #333;
+    font-size:1em;
+}
+footer {
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
+}
+
+ul.posts { 
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
+}
+
+ul.posts li {
+    list-style: none;
+}
+
+
+h1 {
+   color:#0d81af; 
+}
+.jumbotron {
+    background-color:#6cd0d4;
+    margin-top:15px;
+}
+ .content {
+    margin-left:320px;
+    
+ }
+
+ol, ul {
+     margin-top: 15px; 
+     margin-bottom: 10px; 
+}
+
+.container-fluid {
+    border-radius: 15px 15px;
+    padding: 10px;
+    background-color: white;
+}
+
+@media (min-width: 768px) {
+    .container-small {
+        width: 500px;
+    }
+}
+@media (min-width: 992px) {
+    .container-small {
+        width: 800px;
+    }
+}
+@media (min-width: 1200px) {
+    .container-small {
+        width: 1000px;
+    }
+}
 
 a {
   color: #1e6bb8;
@@ -243,3 +329,4 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
